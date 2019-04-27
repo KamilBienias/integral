@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class IntegralOfPolynominal {
@@ -6,24 +7,70 @@ public class IntegralOfPolynominal {
     {
         Scanner scanner = new Scanner(System.in);
         System.out.println("\nThe program calculates definite integral from the polynomial in the given range.");
-        double left, right;
-        do
-        {
-            System.out.println("\nEnter the ends of the interval on which the polynomial is specified (left <right)");
-            System.out.print("Left end = ");
-            left = scanner.nextDouble();
-            System.out.print("Right end = ");
-            right = scanner.nextDouble();
+        System.out.println("\nEnter the ends of the interval on which the polynomial is specified (left <right)");
+        double left = 0;
+        double right = 0;
+        boolean isIntervalError = true;
+        while (isIntervalError) {
+            try {
+                System.out.print("Left end = ");
+                left = scanner.nextDouble();
+                System.out.print("Right end = ");
+                right = scanner.nextDouble();
+                if(left >= right) {
+                    throw new IllegalArgumentException();
+                }
+            isIntervalError = false;
+            }catch (IllegalArgumentException e){
+                System.out.println("The left end must be less than the right one");
+                scanner.nextLine();
+            }catch (InputMismatchException e) {
+                System.out.println("It is in not a number");
+                scanner.nextLine();
+            }
         }
-        while(left >= right);
 
         System.out.println("\nEnter the number of sections to be divided (the more the more precisely): ");
-        int division = scanner.nextInt();//the section will be divided into so many parts
+        int division = 0;
+        boolean isDivisionError = true;
+        while (isDivisionError) {
+            try {
+                division = scanner.nextInt();//the section will be divided into so many parts
+                if(division < 1 || division > Integer.MAX_VALUE){
+                    throw new IllegalArgumentException();
+                }
+                isDivisionError = false;
+            }catch (IllegalArgumentException e){
+                System.out.println("The number of parts must be greater than 0, but less than " + Integer.MAX_VALUE);
+                scanner.nextLine();
+            }catch (InputMismatchException e){
+                System.out.println("It is not an integer. The number of parts must be greater than 0, but less than " + Integer.MAX_VALUE);
+                scanner.nextLine();
+            }
+        }
         double diameterOfDivision = (right - left) / division;//the length of each part is called the diameter of the division
         System.out.println("\nSo you will divide the interval into " + division + " parts,");
         System.out.println("each with a length " + diameterOfDivision);
+
         System.out.print("Give the polynomial degree: ");
-        int degree = scanner.nextInt();
+        int degree = 0;
+        boolean isDegreeError = true;
+        while (isDegreeError) {
+            try {
+                degree = scanner.nextInt();
+                if(degree < 0){
+                    throw new IllegalArgumentException();
+                }
+                isDegreeError = false;
+            }catch (IllegalArgumentException e){
+                System.out.println("Degree must be at least 0");
+                scanner.nextLine();
+            }catch (InputMismatchException e){
+                System.out.println("It is not an integer");
+                scanner.nextLine();
+            }
+        }
+
         System.out.print("W(x)= ");
         for (int i=degree ; i >= 1; i--)//writes the polynomial form of the given degree
         {
