@@ -36,7 +36,7 @@ public class IntegralOfPolynominal {
         while (isDivisionError) {
             try {
                 division = scanner.nextInt();//the section will be divided into so many parts
-                if(division < 1 || division > Integer.MAX_VALUE){
+                if(division < 1){
                     throw new IllegalArgumentException();
                 }
                 isDivisionError = false;
@@ -44,7 +44,7 @@ public class IntegralOfPolynominal {
                 System.out.println("The number of parts must be greater than 0, but less than " + Integer.MAX_VALUE);
                 scanner.nextLine();
             }catch (InputMismatchException e){
-                System.out.println("It is not an integer. The number of parts must be greater than 0, but less than " + Integer.MAX_VALUE);
+                System.out.println("It is not an integer or you put number of parts greater than" + Integer.MAX_VALUE);
                 scanner.nextLine();
             }
         }
