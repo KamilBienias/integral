@@ -80,10 +80,21 @@ public class IntegralOfPolynominal {
 
         System.out.println("Enter polynomial coefficients (they can be with a comma):");
         double[] coefficients = new double[degree+1];
-        for (int j=degree ; j >= 0; j--)
-        {
-            System.out.print("a" + j + " = ");
-            coefficients[j] = scanner.nextDouble();
+        for(int i=0; i<=degree; i++) {
+            coefficients[i] = 0;
+        }
+        boolean isCoefficientsError = true;
+        while (isCoefficientsError) {
+            try {
+                for (int j = degree; j >= 0; j--) {
+                    System.out.print("a" + j + " = ");
+                    coefficients[j] = scanner.nextDouble();
+                }
+                isCoefficientsError = false;
+            }catch (InputMismatchException e){
+                System.out.println("It is not a number");
+                scanner.nextLine();
+            }
         }
         double[] arguments = new double[division];//array of arguments that will be inserted into the function
         double[] values = new double[division];//array of function values ​​for split arguments
