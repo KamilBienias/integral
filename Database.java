@@ -1,29 +1,26 @@
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
-import java.util.Arrays;
+import java.util.List;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Database {
 
-    private double leftEnd;
-    private double rigthEnd;
-    private int division;
-    private double[] coefficients;
-    private double integral;
+    private List<Integral> integrals;
 
+    //a non-argument constructor is needed to create an xml file
     public Database(){
 
     }
 
-    public Database(double leftEnd, double rigthEnd, int division, double[] coefficients, double integral) {
-        this.leftEnd = leftEnd;
-        this.rigthEnd = rigthEnd;
-        this.division = division;
-        this.coefficients = coefficients;
-        this.integral = integral;
-
-
+    public Database(List<Integral> integrals) {
+        this.integrals = integrals;
     }
+
+    public List<Integral> getIntegrals() {
+        return integrals;
+    }
+
+
 }
