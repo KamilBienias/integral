@@ -1,12 +1,15 @@
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
+import java.io.File;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class IntegralOfPolynominal {
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) throws JAXBException {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("\nThe program calculates definite integral from the polynomial in the given range.");
+        System.out.println("\nThe program calculates definite integral from the polynomial in the given range. Then saves the last calculation to the XML file");
         System.out.println("\nEnter the ends of the interval on which the polynomial is specified (left <right)");
         double left = 0;
         double right = 0;
@@ -126,5 +129,19 @@ public class IntegralOfPolynominal {
         System.out.println("is equal: " + sum);
 
         scanner.close();
+
+        Database database = new Database();
+        try {
+            Unmarshaller unmarshaller = UnmarshallerExample.generateUnmarshaller();
+
+            database = (Database) unmarshaller.unmarshal(new File("database.xml"));
+        } catch (JAXBException e) {
+            System.out.println("Create new database");
+        }
+        database = new Database(left, right, division, coefficients, sum);
+        Marshaller marshaller = MarshallerExample.generateMarshaller();
+
+        marshaller.marshal(database, new File("database.xml"));
+
     }
 }
