@@ -1,11 +1,22 @@
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Arrays;
 
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Integral {
 
+    @XmlElement(name = "left-end-of-interval")
     private double leftEnd;
+    @XmlElement(name = "right-end-of-interval")
     private double rigthEnd;
+    @XmlElement(name = "number-of-parts-on-interval")
     private int division;
+    @XmlElement(name = "coefficients-from-a0-to-higher")
     private double[] coefficients;
+    @XmlElement(name = "value-of-integral")
     private double integral;
 
     //a non-argument constructor is needed to create an xml file
