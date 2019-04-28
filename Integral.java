@@ -74,8 +74,8 @@ public class Integral {
 
     @Override
     public String toString() {
-        return  "Left end of intervall=" + leftEnd +
-                "\n, rigth end of intervall=" + rigthEnd +
+        return  "Left end of interval=" + leftEnd +
+                "\n, rigth end of interval=" + rigthEnd +
                 "\n, number od parts in interval division=" + division +
                 "\n, coefficients from a0 to higher=" + Arrays.toString(coefficients) +
                 "\n, value of integral=" + integral;
