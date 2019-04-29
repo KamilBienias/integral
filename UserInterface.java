@@ -2,9 +2,7 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import java.io.File;
-import java.util.ArrayList;
-import java.util.InputMismatchException;
-import java.util.Scanner;
+import java.util.*;
 
 public class UserInterface {
 
@@ -19,6 +17,7 @@ public class UserInterface {
         while (!quit) {
             System.out.println("\nMenu:");
             System.out.println("1. Calculate the integral of the polynomial");
+            System.out.println("2. Display all calculated integrals");
             System.out.println("0. Quit");
 
             System.out.print("Please, enter the command number: ");
@@ -28,7 +27,7 @@ public class UserInterface {
             while (isThereError) {
                 try {
                     commandNumber = scanner.nextInt();
-                    if (commandNumber > 1 || commandNumber < 0) {// checks whether the integer number is from the menu, if not then throws IllegalArgumentException
+                    if (commandNumber > 2 || commandNumber < 0) {// checks whether the integer number is from the menu, if not then throws IllegalArgumentException
                         throw new IllegalArgumentException();
                     }
                     isThereError = false;// when there is no exception, it leaves the try-catch block
@@ -48,12 +47,18 @@ public class UserInterface {
                     calculateIntegral();
                     break;
 
+                case 2:
+                    System.out.println("\nYou have chosen to display calculated integrals:");
+                    displayCalculatedIntegrals();
+                    break;
+
                 case 0:
                     System.out.println("\nYou have chosen to quit");
                     quit = true;
             }
         }
     }
+
 
     private void calculateIntegral() {
 
@@ -181,6 +186,20 @@ public class UserInterface {
         database.getIntegrals().add(integral);
         System.out.println("Integral was added to database. Saved informations:");
         System.out.println(integral);
+    }
+
+    private void displayCalculatedIntegrals() {
+        try {
+//            for (Integral  integral : database.getIntegrals()) {
+//                System.out.println("\n" + integral);
+            for(int i = 0; i < database.getIntegrals().size(); i++){
+                System.out.println(i+1 + ".\n" + database.getIntegrals().get(i) + "\n");
+            }
+        }catch (Exception e){
+            System.out.println("There are no calculated integrals yet");
+        }finally {
+            System.out.println("No more calculated integrals");
+        }
     }
 
     public static void main(String[] args) throws JAXBException {
