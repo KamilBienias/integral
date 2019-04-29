@@ -23,6 +23,4 @@ public class Database {
     public List<Integral> getIntegrals() {
         return integrals;
     }
-
-
 }
