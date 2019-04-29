@@ -14,7 +14,7 @@ public class Integral {
     private double rigthEnd;
     @XmlElement(name = "number-of-parts-on-interval")
     private int division;
-    @XmlElement(name = "coefficients-from-a0-to-higher")
+    @XmlElement(name = "coefficients-from-a0-to-an")
     private double[] coefficients;
     @XmlElement(name = "value-of-integral")
     private double integral;
@@ -74,10 +74,10 @@ public class Integral {
 
     @Override
     public String toString() {
-        return  "Left end of interval= " + leftEnd +
-                "\n, rigth end of interval= " + rigthEnd +
-                "\n, number od parts in interval division= " + division +
-                "\n, coefficients from a0 to higher= " + Arrays.toString(coefficients) +
-                "\n, value of integral= " + integral;
+        return  "left end of interval= " + leftEnd +
+                "\nrigth end of interval= " + rigthEnd +
+                "\nnumber od parts in interval division= " + division +
+                "\ncoefficients from a0 to an= " + Arrays.toString(coefficients) +
+                "\nvalue of integral= " + integral;
     }
 }
