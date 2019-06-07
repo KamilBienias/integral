@@ -8,15 +8,15 @@ import java.util.Arrays;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Integral {
 
-    @XmlElement(name = "left-end-of-interval")
+    @XmlElement(name = "leftEndOfInterval")
     private double leftEnd;
-    @XmlElement(name = "right-end-of-interval")
+    @XmlElement(name = "rightEndOfInterval")
     private double rigthEnd;
-    @XmlElement(name = "number-of-parts-on-interval")
+    @XmlElement(name = "numberOfPartsOnInterval")
     private int division;
-    @XmlElement(name = "coefficients-from-a0-to-an")
+    @XmlElement(name = "coefficientsFrom_a0_to_an")
     private double[] coefficients;
-    @XmlElement(name = "value-of-integral")
+    @XmlElement(name = "valueOfIntegral")
     private double integral;
 
     //a non-argument constructor is needed to create an xml file

@@ -8,7 +8,7 @@ import java.util.List;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Database {
 
-    @XmlElement(name = "integral-of-polynominal")
+    @XmlElement(name = "integralOfPolynominal")
     private List<Integral> integrals;
 
     //a non-argument constructor is needed to create an xml file
