@@ -14,6 +14,8 @@ public class Integral {
     private double rigthEnd;
     @XmlElement(name = "numberOfPartsOnInterval")
     private int division;
+    @XmlElement(name = "degree")
+    private int degree;
     @XmlElement(name = "coefficientsFrom_a0_to_an")
     private double[] coefficients;
     @XmlElement(name = "valueOfIntegral")
@@ -23,10 +25,11 @@ public class Integral {
     public Integral() {
     }
 
-    public Integral(double leftEnd, double rigthEnd, int division, double[] coefficients, double integral) {
+    public Integral(double leftEnd, double rigthEnd, int division, int degree, double[] coefficients, double integral) {
         this.leftEnd = leftEnd;
         this.rigthEnd = rigthEnd;
         this.division = division;
+        this.degree = degree;
         this.coefficients = coefficients;
         this.integral = integral;
     }
@@ -56,6 +59,14 @@ public class Integral {
         this.division = division;
     }
 
+    public int getDegree() {
+        return degree;
+    }
+
+    public void setDegree(int degree) {
+        this.degree = degree;
+    }
+
     public double[] getCoefficients() {
         return coefficients;
     }
@@ -77,6 +88,7 @@ public class Integral {
         return  "left end of interval= " + leftEnd +
                 "\nrigth end of interval= " + rigthEnd +
                 "\nnumber od parts in interval division= " + division +
+                "\ndegree= " + degree +
                 "\ncoefficients from a0 to an= " + Arrays.toString(coefficients) +
                 "\nvalue of integral= " + integral;
     }

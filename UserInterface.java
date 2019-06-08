@@ -182,7 +182,7 @@ public class UserInterface {
         System.out.println(coefficients[0]);
         System.out.println("is equal: " + sum);
 
-        Integral integral = new Integral(left, right, division, coefficients, sum);
+        Integral integral = new Integral(left, right, division, degree, coefficients, sum);
         database.getIntegrals().add(integral);
         System.out.println("Integral was added to database. Saved informations:");
         System.out.println(integral);
