@@ -1,1 +1,24 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><database><integralOfPolynominal><leftEndOfInterval>-4.2</leftEndOfInterval><rightEndOfInterval>6.34</rightEndOfInterval><numberOfPartsOnInterval>10000</numberOfPartsOnInterval><degree>2</degree><coefficientsFrom_a0_to_an>3.0</coefficientsFrom_a0_to_an><coefficientsFrom_a0_to_an>6.9</coefficientsFrom_a0_to_an><coefficientsFrom_a0_to_an>-4.0</coefficientsFrom_a0_to_an><valueOfIntegral>-329.12477253657016</valueOfIntegral></integralOfPolynominal><integralOfPolynominal><leftEndOfInterval>-23.0</leftEndOfInterval><rightEndOfInterval>-4.0</rightEndOfInterval><numberOfPartsOnInterval>8000</numberOfPartsOnInterval><degree>3</degree><coefficientsFrom_a0_to_an>-5.0</coefficientsFrom_a0_to_an><coefficientsFrom_a0_to_an>7.0</coefficientsFrom_a0_to_an><coefficientsFrom_a0_to_an>9.4</coefficientsFrom_a0_to_an><coefficientsFrom_a0_to_an>-12.0</coefficientsFrom_a0_to_an><valueOfIntegral>874965.2783571612</valueOfIntegral></integralOfPolynominal></database>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database>
+  <integralOfPolynominal>
+    <leftEndOfInterval>-4.2</leftEndOfInterval>
+    <rightEndOfInterval>6.34</rightEndOfInterval>
+    <numberOfPartsOnInterval>10000</numberOfPartsOnInterval>
+    <degree>2</degree>
+    <coefficientsFrom_a0_to_an>3.0</coefficientsFrom_a0_to_an>
+    <coefficientsFrom_a0_to_an>6.9</coefficientsFrom_a0_to_an>
+    <coefficientsFrom_a0_to_an>-4.0</coefficientsFrom_a0_to_an>
+    <valueOfIntegral>-329.12477253657016</valueOfIntegral>
+  </integralOfPolynominal>
+  <integralOfPolynominal>
+    <leftEndOfInterval>-23.0</leftEndOfInterval>
+    <rightEndOfInterval>-4.0</rightEndOfInterval>
+    <numberOfPartsOnInterval>8000</numberOfPartsOnInterval>
+    <degree>3</degree>
+    <coefficientsFrom_a0_to_an>-5.0</coefficientsFrom_a0_to_an>
+    <coefficientsFrom_a0_to_an>7.0</coefficientsFrom_a0_to_an>
+    <coefficientsFrom_a0_to_an>9.4</coefficientsFrom_a0_to_an>
+    <coefficientsFrom_a0_to_an>-12.0</coefficientsFrom_a0_to_an>
+    <valueOfIntegral>874965.2783571612</valueOfIntegral>
+  </integralOfPolynominal>
+</database>
